@@ -1,0 +1,13 @@
+name = "feedback-sort"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "FEEDBACK_KV"
+id = "your-kv-namespace-id"
+
+[build]
+command = "npm wrangler deploy"
+
+[site]
+bucket = "./dist"
