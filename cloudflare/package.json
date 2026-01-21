@@ -3,9 +3,10 @@
 	"version": "0.0.0",
 	"private": true,
 	"scripts": {
-		"dev": "wrangler pages dev",
+		"dev": "vite",
 		"build": "tsc && vite build",
-		"deploy": "wrangler pages deploy"
+		"preview": "vite preview",
+		"deploy": "npm run build && wrangler pages deploy dist"
 	},
 	"dependencies": {
 		"react": "^18.2.0",
@@ -17,6 +18,8 @@
 		"typescript": "^5.5.2",
 		"wrangler": "^4.59.3",
 		"@types/react": "^18.2.43",
-		"@types/react-dom": "^18.2.17"
+		"@types/react-dom": "^18.2.17",
+		"vite": "^5.0.0",
+		"@vitejs/plugin-react": "^4.2.0"
 	}
 }

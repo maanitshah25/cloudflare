@@ -4,17 +4,9 @@
  */
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "cloudflare",
-	"main": "src/index.ts",
+	"name": "feedback-analyzer",
 	"compatibility_date": "2025-09-27",
-	"observability": {
-		"enabled": true
-	},
-	"triggers": {
-		"crons": [
-			"* * * * *"
-		]
-	}
+	"pages_build_output_dir": "dist"
 	/**
 	 * Smart Placement
 	 * https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement

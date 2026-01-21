@@ -1,13 +1,28 @@
-name = "feedback-sort"
-main = "src/index.ts"
+name = "feedback-analyzer"
+main = "src/index.tsx"
 compatibility_date = "2024-01-01"
 
+# KV Storage (for our feedback data)
 [[kv_namespaces]]
 binding = "FEEDBACK_KV"
-id = "your-kv-namespace-id"
+id = "your-kv-namespace-id-here"
+preview_id = "your-preview-kv-namespace-id-here"
 
-[build]
-command = "npm wrangler deploy"
+# D1 Database (if you want SQL instead of KV)
+[[d1_databases]]
+binding = "DB"
+database_name = "feedback-db"
+database_id = "your-d1-database-id-here"
 
-[site]
-bucket = "./dist"
+# R2 Storage (for file uploads)
+[[r2_buckets]]
+binding = "FEEDBACK_FILES"
+bucket_name = "feedback-attachments"
+
+# Analytics Engine (for tracking)
+[[analytics_engine_datasets]]
+binding = "ANALYTICS"
+
+# Environment variables
+[vars]
+ENVIRONMENT = "production"
